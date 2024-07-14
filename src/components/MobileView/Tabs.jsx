@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AllChat from './TabChats/AllChat';
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState('All Chats');
@@ -7,7 +8,7 @@ const Tabs = () => {
 
   return (
     <div className="w-full max-w-md mx-auto text-white overflow-x-auto">
-      <div className="flex space-x-4 bg-[#40a4c4] px-4">
+      <div className="flex space-x-4 bg-[#40a4c4] px-4 overflow-x-auto">
         {tabs.map((tab) => (
           <button
             key={tab}
@@ -22,7 +23,7 @@ const Tabs = () => {
       </div>
       <div className="mt-6">
         <div
-          className={`px-4 transform transition-transform duration-500 ease-in-out ${
+          className={`transform transition-transform duration-500 ease-in-out ${
             activeTab === 'All Chats' ? 'translate-x-0' : ''
           } ${activeTab === 'Active' ? 'translate-x-full' : ''} ${
             activeTab === 'Unread' ? 'translate-x-2xl' : ''

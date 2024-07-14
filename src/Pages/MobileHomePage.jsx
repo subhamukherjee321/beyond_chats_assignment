@@ -1,6 +1,6 @@
 import React from "react";
 import MobileNavbar from "../components/MobileView/MobileNavbar";
-import BottomBarTabs from "../components/MobileView/BottomBar";
+import BottomBarTabs from "../components/MobileView/Tabs";
 
 const MobileHomePage = () => {
   return (
