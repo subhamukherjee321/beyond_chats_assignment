@@ -3,8 +3,9 @@ import Message from "./components/desktop/Message";
 
 export default function App() {
   return (
-    <div className="flex">
+    <div className="flex overflow-hidden">
       <ChatList />
       <Message />
     </div>
-  )}
+  );
+}

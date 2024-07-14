@@ -6,13 +6,12 @@ import styled from "styled-components";
 const ChatList = () => {
   const { chats } = useChat();
 
-  // console.log("chats", chats);
   return (
     <ChatContainer className="bg-[#212121] w-[425px] max-w-xl max-h-screen overflow-y-auto">
       <Nav_desk />
-      <div className="flex flex-col px-2">
+      <div className="flex flex-col px-2 mt-17">
         {chats.map((chat, idx) => (
-          <Chat key={idx} index={idx + 1} chat={chat} />
+          <Chat key={idx} index={idx} chat={chat} />
         ))}
       </div>
     </ChatContainer>

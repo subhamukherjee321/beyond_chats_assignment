@@ -1,11 +1,9 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import useStore from "../utils/store";
 
 const useMessage = (chatId) => {
-  const [message, setMessage] = useState({
-    user: [],
-    sender: [],
-  });
+  const { setMessage, message } = useStore();
 
   const getMessages = async () => {
     try {
@@ -18,9 +16,17 @@ const useMessage = (chatId) => {
 
       res.data.data.forEach((chat) => {
         if (chat.sender.email === "contact@beyondchat.com") {
-          user.push(chat.message);
+          user.push({
+            message: chat.message,
+            name: chat.sender.name,
+            date: chat.created_at,
+          });
         } else {
-          sender.push(chat.message);
+          sender.push({
+            message: chat.message,
+            name: chat.sender.name,
+            date: chat.created_at,
+          });
         }
       });
 
