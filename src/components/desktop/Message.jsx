@@ -1,4 +1,5 @@
 import useMessage from "../../hooks/useMessage";
+import ChatBubbleDesk from "../../shared/ChatBubbleDesk";
 import useStore from "../../utils/store";
 import MessageNav from "./MessageNav";
 
@@ -15,8 +16,8 @@ const Message = () => {
       <div className="flex flex-col gap-5 max-h-[550px] overflow-y-auto">
         {message.user.map((msg, idx) => (
           <div key={idx} className="w-[475px] flex flex-col gap-5 mx-auto">
-            <div className="bg-[#8774e1] text-white">{msg}</div>
-            <div className="bg-[#212121] text-white">{message.sender[idx]}</div>
+            <ChatBubbleDesk message={msg} isSender={false} />
+            <ChatBubbleDesk message={message.sender[idx]} isSender={true} />
           </div>
         ))}
       </div>
