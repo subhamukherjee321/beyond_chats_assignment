@@ -1,13 +1,13 @@
 import React from "react";
+import Tabs from "../components/MobileView/Tabs";
 import MobileNavbar from "../components/MobileView/MobileNavbar";
-import BottomBarTabs from "../components/MobileView/Tabs";
 
 const MobileHomePage = () => {
   return (
-    <section>
+    <section className="sm: block md:hidden">
       <header>
         <MobileNavbar />
-        <BottomBarTabs />
+        <Tabs />
       </header>
     </section>
   );
