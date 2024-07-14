@@ -76,37 +76,37 @@ const MobileNavbar = () => {
             />
           </div>
         </div>
-        <ul className="p-4">
-          <li className="flex items-center mb-3">
+        <ul>
+          <li className="flex items-center hover:bg-gray-200 px-4 py-2">
             <FaUserAlt className="mr-2" /> My Profile
           </li>
-          <li className="flex items-center mb-3">
+          <li className="flex items-center px-4 py-2 hover:bg-gray-200">
             <FaUsers className="mr-2" /> New Group
           </li>
-          <li className="flex items-center mb-3">
+          <li className="flex items-center px-4 py-2 hover:bg-gray-200">
             <FaAddressBook className="mr-2" /> Contacts
           </li>
-          <li className="flex items-center mb-3">
+          <li className="flex items-center px-4 py-2 hover:bg-gray-200">
             <FaPhone className="mr-2" /> Calls
           </li>
-          <li className="flex items-center mb-3">
+          <li className="flex items-center px-4 py-2 hover:bg-gray-200">
             <FaPeopleArrows className="mr-2" /> People Nearby
           </li>
-          <li className="flex items-center mb-3">
+          <li className="flex items-center px-4 py-2 hover:bg-gray-200">
             <FaRegBookmark className="mr-2 font-bold" /> Saved Messaages
           </li>
-          <li className="flex items-center">
+          <li className="flex items-center px-4 py-2 hover:bg-gray-200">
             <FaCog className="mr-2" /> Settings
           </li>
         </ul>
 
         <hr />
 
-        <ul className="mt-1.5 px-4">
-          <li className="flex items-center mb-3">
+        <ul className="mt-1.5">
+          <li className="flex items-center px-4 py-2 hover:bg-gray-200">
             <IoPersonAdd className="mr-2" /> Invite Friends
           </li>
-          <li className="flex items-center mb-3">
+          <li className="flex items-center px-4 py-2 hover:bg-gray-200">
             <RxQuestionMarkCircled className="mr-2 font-bold" /> Telegram Features
           </li>
         </ul>
