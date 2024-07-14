@@ -5,6 +5,7 @@ import { ChatBubbleSender, ChatBubbleUser } from "../../shared/ChatBubbleDesk";
 import useStore from "../../utils/store";
 import MessageNav from "./MessageNav";
 import styled from "styled-components";
+import messageBg from "../../assets/telegram-bg.png";
 
 const Message = () => {
   const { chatId } = useStore();

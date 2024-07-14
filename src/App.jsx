@@ -1,11 +1,16 @@
 import ChatList from "./components/desktop/ChatList";
 import Message from "./components/desktop/Message";
+import MobileHomePage from "./Pages/MobileHomePage";
 
 export default function App() {
   return (
-    <div className="flex overflow-hidden">
-      <ChatList />
-      <Message />
-    </div>
+    <main>
+      <div className="md:flex overflow-hidden hidden">
+        <ChatList />
+        <Message />
+      </div>
+
+      <MobileHomePage />
+    </main>
   );
 }
