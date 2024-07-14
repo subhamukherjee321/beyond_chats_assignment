@@ -1,5 +1,5 @@
 import React from "react";
-import BottomBarTabs from "../components/MobileView/BottomBar";
+import Tabs from "../components/MobileView/Tabs";
 import MobileNavbar from "../components/MobileView/MobileNavbar";
 
 const MobileHomePage = () => {
@@ -7,7 +7,7 @@ const MobileHomePage = () => {
     <section className="sm: block md:hidden">
       <header>
         <MobileNavbar />
-        <BottomBarTabs />
+        <Tabs />
       </header>
     </section>
   );
