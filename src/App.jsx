@@ -1,9 +1,10 @@
-import MobileHomePage from "./Pages/MobileHomePage";
+import ChatList from "./components/desktop/ChatList";
+import Message from "./components/desktop/Message";
 
 export default function App() {
   return (
-    <main>
-      <MobileHomePage />
-    </main>
-  );
-}
+    <div className="flex">
+      <ChatList />
+      <Message />
+    </div>
+  )}
