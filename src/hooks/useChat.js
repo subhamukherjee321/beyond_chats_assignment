@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import useStore from "../utils/store";
 import axios from "axios";
 
-const useChat = () => {
+const useChat = (page = 1) => {
   const { setChats, chats } = useStore();
 
-  const loadChats = async (page = 1) => {
+  const loadChats = async () => {
     try {
       const res = await axios.get(
         `https://devapi.beyondchats.com/api/get_all_chats?page${page}`
