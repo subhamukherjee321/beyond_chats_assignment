@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
-import createFormatedDate from "../utils/formatDate";
 import { useEffect } from "react";
+import createFormatedDate from "../utils/formatDate";
+import useStore from "../utils/store";
 
 export const ChatBubbleSender = ({
   message,
@@ -10,6 +11,8 @@ export const ChatBubbleSender = ({
   setDateData,
   isIntersecting,
 }) => {
+  const { theme } = useStore();
+
   useEffect(() => {
     if (isIntersecting) {
       console.log(isIntersecting, date);
@@ -19,27 +22,32 @@ export const ChatBubbleSender = ({
   }, [isIntersecting]);
 
   return (
-    <div className="flex items-start gap-2.5 md:self-start w-[80%] md:min-w-[35%]" ref={observerRef}>
+    <div
+      className="flex items-start gap-2.5 md:self-start w-[80%] md:min-w-[35%]"
+      ref={observerRef}
+    >
       <div
-        className={`flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-[#212121]`}
+        className={`flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200rounded-e-xl rounded-es-xl ${
+          theme ? "bg-black text-white" : "bg-white text-black"
+        }`}
       >
         <div className="flex items-center space-x-2 rtl:space-x-reverse">
-          <span className="text-sm font-semibold text-gray-900 dark:text-white">
-            {name}
-          </span>
+          <span className="text-sm font-semibold">{name}</span>
           <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
             {createFormatedDate(date)}
           </span>
         </div>
-        <p className="text-sm font-normal py-2.5 text-gray-900 dark:text-white">
-          {message}
-        </p>
+        <p className="text-sm font-normal py-2.5">{message}</p>
       </div>
       <button
         id="dropdownMenuIconButton"
         data-dropdown-toggle="dropdownDots"
         data-dropdown-placement="bottom-start"
-        className="inline-flex self-center items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 dark:focus:ring-gray-600"
+        className={`inline-flex self-center items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 ${
+          theme
+            ? "bg-gray-800 hover:bg-gray-700 focus:ring-gray-600"
+            : "white hover:bg-gray-200"
+        }`}
         type="button"
       >
         <svg
@@ -107,27 +115,31 @@ export const ChatBubbleSender = ({
 };
 
 export const ChatBubbleUser = ({ message, name, date }) => {
+  const { theme } = useStore();
   return (
     <div className="flex items-start gap-2.5 self-end w-[80%] md:w-[45%]">
-      <div className="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-[#8774e1]">
+      <div
+        className={`flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200  rounded-e-xl rounded-es-xl ${
+          theme ? "bg-[#8774e1] text-white" : "bg-[#EEFFED] text-black"
+        }`}
+      >
         <div className="flex items-center space-x-2 rtl:space-x-reverse">
-          <span className="text-sm font-semibold text-gray-900 dark:text-white">
-            {name}
-          </span>
+          <span className="text-sm font-semibold">{name}</span>
           <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
             {createFormatedDate(date)}
           </span>
         </div>
-        <p className="text-sm font-normal py-2.5 text-gray-900 dark:text-white">
-          {message}
-        </p>
+        <p className="text-sm font-normal py-2.5">{message}</p>
       </div>
       <button
         id="dropdownMenuIconButton"
         data-dropdown-toggle="dropdownDots"
         data-dropdown-placement="bottom-start"
-        className="inline-flex self-center items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 dark:focus:ring-gray-600"
-        type="button"
+        className={`inline-flex self-center items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 ${
+          theme
+            ? "bg-gray-800 hover:bg-gray-700 focus:ring-gray-600"
+            : "white hover:bg-gray-200"
+        }`}
       >
         <svg
           className="w-4 h-4 text-gray-500 dark:text-gray-400"

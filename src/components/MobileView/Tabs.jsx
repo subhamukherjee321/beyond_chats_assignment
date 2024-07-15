@@ -1,14 +1,21 @@
 import React, { useState } from "react";
 import ChatBox from "../desktop/ChatBox";
 import TabOPtions from "./TabOPtions";
+import useStore from "../../utils/store";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("All Chats");
 
-  const tabs = ["All Chats", "Active", "Unread", "Regulars"];
+  const { theme } = useStore();
 
   return (
-    <div className="w-full max-w-md mx-auto text-white bg-[#212121]">
+    <div
+      className={`w-full max-w-md mx-auto`}
+      style={{
+        background: theme ? "#212121" : "white",
+        color: theme ? "white" : "black",
+      }}
+    >
       <TabOPtions />
       <div>
         <div
@@ -20,13 +27,13 @@ const Tabs = () => {
         >
           {activeTab === "All Chats" && <ChatBox />}
           {activeTab === "Active" && (
-            <div className="text-2xl text-black bg-red-600">Active Content</div>
+            <div className="text-2xl bg-red-600">Active Content</div>
           )}
           {activeTab === "Unread" && (
-            <div className="text-2xl text-black">Unread Content</div>
+            <div className="text-2xl">Unread Content</div>
           )}
           {activeTab === "Regulars" && (
-            <div className="text-2xl text-black">Regulars Content</div>
+            <div className="text-2xl">Regulars Content</div>
           )}
         </div>
       </div>
