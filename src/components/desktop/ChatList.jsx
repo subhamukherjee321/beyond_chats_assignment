@@ -1,11 +1,20 @@
 import styled from "styled-components";
+import useStore from "../../utils/store";
 import TabOPtions from "../MobileView/TabOPtions";
 import ChatBox from "./ChatBox";
 import Nav_desk from "./Nav_desk";
 
 const ChatList = () => {
+  const { theme } = useStore();
+  
   return (
-    <ChatContainer className="bg-[#212121] w-[25%] max-w-xl max-h-screen overflow-y-auto">
+    <ChatContainer
+      className="w-[25%] max-w-xl max-h-screen overflow-y-auto"
+      style={{
+        background: theme ? "#212121" : "white",
+        color: theme ? "white" : "black",
+      }}
+    >
       <Nav_desk />
       <TabOPtions />
       <ChatBox />
