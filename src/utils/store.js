@@ -7,6 +7,8 @@ const useStore = create((set) => ({
   setChatId: (payload) => set((state) => ({ ...state, chatId: payload })),
   message: { user: [], sender: [] },
   setMessage: (payload) => set((state) => ({ ...state, message: payload })),
+  theme: true,
+  setTheme: (payload) => set((state) => ({...state, theme: payload })),
 }));
 
 export default useStore;

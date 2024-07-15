@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import formatDate from "../../utils/formatDate";
 import getTwoLetterName from "../../utils/getTwoLetterName";
 import randomColor from "../../utils/returnColor";
 import useStore from "../../utils/store";
@@ -21,10 +22,15 @@ const Chat = ({ chat, index }) => {
       >
         {getTwoLetterName(chat?.creator?.name)}
       </div>
-      <div>
-        <p className="text-white font-semibold">
-          {chat?.creator?.name || "Unknown"}
-        </p>
+      <div className="w-full">
+        <div className="flex justify-between w-full">
+          <p className="text-white font-semibold">
+            {chat?.creator?.name || "Unknown"}
+          </p>
+          <p className="text-white text-xs">
+            {formatDate(chat?.creator?.created_at)}
+          </p>
+        </div>
         <p className="text-[#a6a6a6]">User joined telegram</p>
       </div>
       <span className="absolute right-2 top-2"></span>

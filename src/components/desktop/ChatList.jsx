@@ -1,19 +1,14 @@
-import useChat from "../../hooks/useChat";
-import Chat from "./Chat";
-import Nav_desk from "./Nav_desk";
 import styled from "styled-components";
+import TabOPtions from "../MobileView/TabOPtions";
+import ChatBox from "./ChatBox";
+import Nav_desk from "./Nav_desk";
 
 const ChatList = () => {
-  const { chats } = useChat();
-
   return (
-    <ChatContainer className="bg-[#212121] w-[425px] max-w-xl max-h-screen overflow-y-auto">
+    <ChatContainer className="bg-[#212121] w-[25%] max-w-xl max-h-screen overflow-y-auto">
       <Nav_desk />
-      <div className="flex flex-col px-2 mt-17">
-        {chats.map((chat, idx) => (
-          <Chat key={idx} index={idx} chat={chat} />
-        ))}
-      </div>
+      <TabOPtions />
+      <ChatBox />
     </ChatContainer>
   );
 };
