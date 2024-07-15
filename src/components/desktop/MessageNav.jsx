@@ -21,9 +21,12 @@ const MessageNav = () => {
           }}
           className="w-10 h-10 rounded-full text-2xl text-white font-semibold flex justify-center items-center"
         >
-          {getTwoLetterName(name)}
+          <p>{getTwoLetterName(name)}</p>
         </div>
-        <div className="text-white font-semibold">{name}</div>
+        <div className="text-white font-semibold">
+          <p>{name}</p>
+          <p className="text-xs mt-1 font-thin">last seen Jun 23 at 1:34 AM</p>
+        </div>
       </div>
       <div className="flex items-start gap-7">
         <IoCall className="w-6 h-6 text-[#aaaaaa]" />

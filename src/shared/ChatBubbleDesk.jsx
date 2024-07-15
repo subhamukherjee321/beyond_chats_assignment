@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import createFormatedDate from "../utils/date";
+import createFormatedDate from "../utils/formatDate";
 import { useEffect } from "react";
 
 export const ChatBubbleSender = ({
@@ -19,7 +19,7 @@ export const ChatBubbleSender = ({
   }, [isIntersecting]);
 
   return (
-    <div className="flex items-start gap-2.5" ref={observerRef}>
+    <div className="flex items-start gap-2.5 md:self-start w-[80%] md:min-w-[35%]" ref={observerRef}>
       <div
         className={`flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-[#212121]`}
       >
@@ -108,7 +108,7 @@ export const ChatBubbleSender = ({
 
 export const ChatBubbleUser = ({ message, name, date }) => {
   return (
-    <div className="flex items-start gap-2.5">
+    <div className="flex items-start gap-2.5 self-end w-[80%] md:w-[45%]">
       <div className="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-[#8774e1]">
         <div className="flex items-center space-x-2 rtl:space-x-reverse">
           <span className="text-sm font-semibold text-gray-900 dark:text-white">
